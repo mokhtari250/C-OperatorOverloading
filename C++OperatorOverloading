@@ -1,0 +1,25 @@
+#include "date.h"
+/*
+Date::Date()
+{
+    month = 1;
+    day = 1;
+    year = 2020;
+}*/
+
+int Date::dateCounter = 0;
+
+std::string Date::getShortDate() const
+{
+    return std::to_string(month) + "/" + std::to_string(day) + "/" +std::to_string(year);
+}
+
+bool Date::operator==(const Date& lhs, const Date& rhs)
+{
+    return lhs.year == rhs.year && lhs.month == rhs.month && lhs.day == rhs.day;
+}
+
+std::ostream& operator<<(std::ofstream& outStream, Const date& dateToPrint)
+{
+    return (outStream << dateToPrint.getShortDate());
+}
